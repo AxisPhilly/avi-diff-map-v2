@@ -82,6 +82,10 @@ app.addMarker = function(lat, lng) {
 
 // Send @address to the Nomatim geocoding service
 app.geocodeRequest = function(address) {
+  if(address.search(/Phila/i) == -1) {
+    address = address + ' Philadelphia, PA, USA';
+  }
+
   var url = 'http://open.mapquestapi.com/nominatim/v1/search.php?' +
             'format=json&json_callback=app.processGeocodeResponse&q=' + encodeURIComponent(address) +
             '&viewbox=40.125%2C-75.407%2C39.834%2C-75.017' +
