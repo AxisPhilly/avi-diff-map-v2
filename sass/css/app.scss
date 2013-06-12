@@ -234,13 +234,21 @@ html, body, #map {
   font-size: 14px;
 
   h2 {
+    font-family: "calluna", georgia, serif;
     font-size: 24px;
     margin: 2px 0;
   }
 
   .byline {
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,sans-serif;
     margin: 6px 0;
     line-height: 20px;
+
+    .byline-author {
+      font-weight: 300;
+      color: #666;
+      font-size: 16px;
+    }
   }
 }
 

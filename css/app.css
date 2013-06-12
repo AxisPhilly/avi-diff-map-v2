@@ -172,11 +172,17 @@ html, body, #map {
   background-color: #fff;
   font-size: 14px; }
   .description h2 {
+    font-family: "calluna", georgia, serif;
     font-size: 24px;
     margin: 2px 0; }
   .description .byline {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif;
     margin: 6px 0;
     line-height: 20px; }
+    .description .byline .byline-author {
+      font-weight: 300;
+      color: #666;
+      font-size: 16px; }
 
 .leaflet-control-zoom {
   top: 50px; }
