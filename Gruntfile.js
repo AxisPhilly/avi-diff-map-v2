@@ -25,8 +25,7 @@ module.exports = function(grunt) {
         files: {
           'www/js/app.libraries.min.<%= pkg.version %>.js': [
             'js/lib/underscore.js',
-            'js/lib/leaflet.js',
-            'js/lib/wax.leaf.js',
+            'js/lib/mapbox.js',
             'js/lib/foundation.js',
             'js/lib/foundation.reveal.js',
             'js/lib/fastclick.js'
@@ -49,7 +48,7 @@ module.exports = function(grunt) {
         src: [
           'css/normalize.css',
           'css/lib/foundation.min.css',
-          'css/lib/leaflet.css'
+          'css/lib/mapbox.css'
           ],
         dest: 'www/css/app.libraries.<%= pkg.version %>.css'
       }
