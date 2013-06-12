@@ -23,7 +23,7 @@ app.use('/img', express.static(__dirname + '/img'));
 
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'Fullscreen Map | AxisPhilly',
+    title: 'Property Tax Changes | AxisPhilly',
     env: app.settings.env,
     version: pkg.version
   });
@@ -31,7 +31,7 @@ app.get('/', function(req, res){
 
 app.get('/embed', function(req, res){
   res.render('embed', {
-    title: 'App Title | AxisPhilly',
+    title: 'Property Tax Changes | AxisPhilly',
     env: app.settings.env,
     version: pkg.version
   });
