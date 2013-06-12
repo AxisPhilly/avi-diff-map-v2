@@ -4,8 +4,7 @@
   <script type="text/javascript" src="js/app.libraries.min.<%= version %>.js"></script>
 <% } else { %>
   <script type="text/javascript" src="js/lib/underscore.js"></script>
-  <script type="text/javascript" src="js/lib/leaflet.js"></script>
-  <script type="text/javascript" src="js/lib/wax.leaf.js"></script>
+  <script type="text/javascript" src="js/lib/mapbox.js"></script>
   <script type="text/javascript" src="js/lib/foundation.js"></script>
   <script type="text/javascript" src="js/lib/foundation.reveal.js"></script>
   <script type="text/javascript" src="js/lib/fastclick.js"></script>
@@ -29,7 +28,7 @@
   // Default settings. Zoom and center overridden by URL params, if they exist
   app.opts = {
     mapContainer: 'map',
-    tileURL: 'http://api.tiles.mapbox.com/v3/axisphilly.map-5rf31e6p.jsonp',
+    tileURL: 'http://api.tiles.mapbox.com/v3/axisphilly.map-g0m33qeq.jsonp',
     mapOptions: {
       center: [39.99, -75.150],
       zoom: 12,
