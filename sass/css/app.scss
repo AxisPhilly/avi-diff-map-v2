@@ -1,0 +1,295 @@
+body {
+  padding: 0;
+  margin: 0;
+  color: #444;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #444;
+  }
+}
+
+html, body, #map {
+  height: 100%;
+}
+
+// NAV BARS
+.bar {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 50px;
+  background-color: #f6f5f7;
+  -webkit-box-shadow: 0 1px #b0b1b1;
+  box-shadow: 0 1px #b0b1b1;
+
+  .button {
+    line-height: 1.5em;
+    top: 4px;
+    height: 2.6em;
+    font-size: 16px;
+
+    @media(max-width: 360px) {
+      line-height: 1.1em;
+      top: 4px;
+      height: 1.9em;
+      font-size: 14px;
+    }
+  }
+
+  @media(max-width: 360px) {
+    height: 35px;
+  }
+}
+
+#top-nav {
+  top: 0;
+
+  img.logo {
+    padding: 10px;
+
+    @media(max-width: 360px) {
+      margin-top: -1px;
+      width: 150px;
+    }
+  }
+}
+
+#bottom-nav {
+  bottom: 0;
+  border-top: solid 1px #b0b1b1;
+  display: none;
+
+  @media(max-width: 960px) {
+    display: block;
+  }
+}
+
+// TITLE BAR - for mobile
+#title-bar {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 25px;
+  top: 51px;
+  background: #fff;
+  opacity: 0.8;
+  border-bottom: solid 1px #b0b1b1;
+  display: none;
+  padding: 4px 10px;
+  font-size: 14px;
+
+  @media(max-width: 960px) {
+    display: block;
+  }
+
+  @media(max-width: 360px) {
+    top: 36px;
+  }
+}
+
+// BUTTONS
+.nav-button {
+  margin-right: 10px;
+  float: right;
+  padding-left: .7em;
+
+  img {
+    height: 100%;
+    margin-right: 5px;
+  }
+}
+
+.find-user {
+  @media(max-width: 960px) {
+    display: none;
+  }
+
+  &.bottom {
+    display: block;
+
+    @media(min-width: 960px) {
+      display: none;
+    }
+  }
+}
+
+.embed {
+  @media(max-width: 960px) {
+    display: none;
+  }
+
+  &.bottom {
+    display: block;
+
+    @media(min-width: 960px) {
+      display: none;
+    }
+
+    @media(max-width: 360px) {
+      display: none;
+    }
+  }
+}
+
+.info {
+  display: none;
+
+  @media(max-width: 960px) {
+    display: block;
+  }
+
+  @media(max-width: 360px) {
+    padding-right: 0.2em;
+    padding-left: 0.2em;
+  }
+}
+
+// SEARCH FORM
+.search {
+  display: inline-block;
+  float: right;
+
+  @media(max-width: 960px) {
+    display: none;
+  }
+
+  &.bottom {
+    display: block;
+
+    @media(min-width: 960px) {
+      display: none;
+    }
+  }
+
+  input {
+    float: right;
+    margin: 5px -2px 0 0;
+    padding-left: .7em;
+    border-radius: 3px;
+    height: 41px;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+    border: 1px solid #ccc;
+    color: #444;
+    font-size: 16px;
+
+    @media(max-width: 360px) {
+      height: 26px;
+      font-size: 11px;
+    }
+
+    &:focus {
+      border-color: #FDD441;
+      box-shadow: 0 0px 1px #FDD441 inset, 0 0 1px #FDD441;
+      outline: 0;
+      outline-width: 0;
+    }
+  }
+
+  button.find {
+    float: right;
+    font-size: 100%;
+    padding: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    @media(max-width: 360px) {
+      height: 1.7em;
+    }
+
+    img {
+      height: 40px;
+
+      @media(max-width: 360px) {
+        height: 30px;
+      }
+    }
+  }
+}
+
+// DESCRIPTION
+#browser-description {
+  width: 250px;
+  z-index: 99;
+  position: absolute;
+  left: 10px;
+  top: 48px;
+  opacity: 0.9;
+  padding: 10px;
+  border: solid 1px #b0b1b1;
+  border-radius: 3px;
+
+  @media(max-width: 960px) {
+    display: none;
+  }
+}
+
+#mobile-description {
+
+}
+
+.description {
+  background-color: #fff;
+  font-size: 14px;
+
+  h2 {
+    font-size: 24px;
+    margin: 2px 0;
+  }
+
+  .byline {
+    margin: 6px 0;
+  }
+}
+
+// LEAFLET OVERRIDES
+.leaflet-control-zoom {
+  top: 50px;
+
+  @media(max-width: 960px) {
+    top: 70px;
+  }
+}
+
+.leaflet-control-zoom a {
+  height: 40px;
+  width: 40px;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.leaflet-control-zoom {
+  @media(max-width: 640px) {
+    display: none;
+  }
+}
+
+.button {
+  border-style: none;
+  background-color: #95A5A6;
+
+  &:hover {
+    background-color: #FDD441;
+  }
+}
+
+.leaflet-control-attribution {
+  @media(max-width: 960px) {
+    display: none;
+  }
+}
+
+// FOUNDATION OVERRIDES
+.reveal-modal {
+  color: #444;
+  z-index: 9999;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.button.small {
+  @media(max-width: 360px) {
+    padding-top: 0.425em;
+  }
+}

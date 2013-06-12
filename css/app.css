@@ -1,0 +1,214 @@
+body {
+  padding: 0;
+  margin: 0;
+  color: #444; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    color: #444; }
+
+html, body, #map {
+  height: 100%; }
+
+.bar {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 50px;
+  background-color: #f6f5f7;
+  -webkit-box-shadow: 0 1px #b0b1b1;
+  box-shadow: 0 1px #b0b1b1; }
+  .bar .button {
+    line-height: 1.5em;
+    top: 4px;
+    height: 2.6em;
+    font-size: 16px; }
+    @media (max-width: 360px) {
+      .bar .button {
+        line-height: 1.1em;
+        top: 4px;
+        height: 1.9em;
+        font-size: 14px; } }
+  @media (max-width: 360px) {
+    .bar {
+      height: 35px; } }
+
+#top-nav {
+  top: 0; }
+  #top-nav img.logo {
+    padding: 10px; }
+    @media (max-width: 360px) {
+      #top-nav img.logo {
+        margin-top: -1px;
+        width: 150px; } }
+
+#bottom-nav {
+  bottom: 0;
+  border-top: solid 1px #b0b1b1;
+  display: none; }
+  @media (max-width: 960px) {
+    #bottom-nav {
+      display: block; } }
+
+#title-bar {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 25px;
+  top: 51px;
+  background: #fff;
+  opacity: 0.8;
+  border-bottom: solid 1px #b0b1b1;
+  display: none;
+  padding: 4px 10px;
+  font-size: 14px; }
+  @media (max-width: 960px) {
+    #title-bar {
+      display: block; } }
+  @media (max-width: 360px) {
+    #title-bar {
+      top: 36px; } }
+
+.nav-button {
+  margin-right: 10px;
+  float: right;
+  padding-left: .7em; }
+  .nav-button img {
+    height: 100%;
+    margin-right: 5px; }
+
+@media (max-width: 960px) {
+  .find-user {
+    display: none; } }
+.find-user.bottom {
+  display: block; }
+  @media (min-width: 960px) {
+    .find-user.bottom {
+      display: none; } }
+
+@media (max-width: 960px) {
+  .embed {
+    display: none; } }
+.embed.bottom {
+  display: block; }
+  @media (min-width: 960px) {
+    .embed.bottom {
+      display: none; } }
+  @media (max-width: 360px) {
+    .embed.bottom {
+      display: none; } }
+
+.info {
+  display: none; }
+  @media (max-width: 960px) {
+    .info {
+      display: block; } }
+  @media (max-width: 360px) {
+    .info {
+      padding-right: 0.2em;
+      padding-left: 0.2em; } }
+
+.search {
+  display: inline-block;
+  float: right; }
+  @media (max-width: 960px) {
+    .search {
+      display: none; } }
+  .search.bottom {
+    display: block; }
+    @media (min-width: 960px) {
+      .search.bottom {
+        display: none; } }
+  .search input {
+    float: right;
+    margin: 5px -2px 0 0;
+    padding-left: .7em;
+    border-radius: 3px;
+    height: 41px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    color: #444;
+    font-size: 16px; }
+    @media (max-width: 360px) {
+      .search input {
+        height: 26px;
+        font-size: 11px; } }
+    .search input:focus {
+      border-color: #FDD441;
+      box-shadow: 0 0px 1px #FDD441 inset, 0 0 1px #FDD441;
+      outline: 0;
+      outline-width: 0; }
+  .search button.find {
+    float: right;
+    font-size: 100%;
+    padding: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; }
+    @media (max-width: 360px) {
+      .search button.find {
+        height: 1.7em; } }
+    .search button.find img {
+      height: 40px; }
+      @media (max-width: 360px) {
+        .search button.find img {
+          height: 30px; } }
+
+#browser-description {
+  width: 250px;
+  z-index: 99;
+  position: absolute;
+  left: 10px;
+  top: 48px;
+  opacity: 0.9;
+  padding: 10px;
+  border: solid 1px #b0b1b1;
+  border-radius: 3px; }
+  @media (max-width: 960px) {
+    #browser-description {
+      display: none; } }
+
+
+.description {
+  background-color: #fff;
+  font-size: 14px; }
+  .description h2 {
+    font-size: 24px;
+    margin: 2px 0; }
+  .description .byline {
+    margin: 6px 0; }
+
+.leaflet-control-zoom {
+  top: 50px; }
+  @media (max-width: 960px) {
+    .leaflet-control-zoom {
+      top: 70px; } }
+
+.leaflet-control-zoom a {
+  height: 40px;
+  width: 40px;
+  font-size: 32px;
+  line-height: 40px; }
+
+@media (max-width: 640px) {
+  .leaflet-control-zoom {
+    display: none; } }
+
+.button {
+  border-style: none;
+  background-color: #95A5A6; }
+  .button:hover {
+    background-color: #FDD441; }
+
+@media (max-width: 960px) {
+  .leaflet-control-attribution {
+    display: none; } }
+
+.reveal-modal {
+  color: #444;
+  z-index: 9999;
+  box-shadow: none;
+  -webkit-box-shadow: none; }
+
+@media (max-width: 360px) {
+  .button.small {
+    padding-top: 0.425em; } }
