@@ -302,3 +302,10 @@ html, body, #map {
     padding-top: 0.425em;
   }
 }
+
+// MAPBOX OVERRIDES
+.map-tooltip {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}

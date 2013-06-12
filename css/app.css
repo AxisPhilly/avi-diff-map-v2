@@ -219,3 +219,8 @@ html, body, #map {
 @media (max-width: 360px) {
   .button.small {
     padding-top: 0.425em; } }
+
+.map-tooltip {
+  position: absolute;
+  right: 50px;
+  top: 50px; }
