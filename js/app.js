@@ -26,7 +26,7 @@ app.initMap = function(callback) {
 
   L.Icon.Default.imagePath = 'img/leaflet';
 
-  app.map = L.mapbox.map('map', 'axisphilly.map-g0m33qeq')
+  app.map = L.mapbox.map('map', 'axisphilly.map-g0m33qeq', mapSettings)
     .setView(mapSettings.center, mapSettings.zoom);
 
   L.control.zoom({position: 'topright'}).addTo(app.map);
