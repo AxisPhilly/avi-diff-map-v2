@@ -209,12 +209,12 @@ html, body, #map {
 }
 
 // DESCRIPTION
-#browser-description {
+#desktop-description {
   width: 250px;
   z-index: 99;
   position: absolute;
   left: 10px;
-  top: 48px;
+  top: 58px;
   opacity: 0.9;
   padding: 10px;
   border: solid 1px #b0b1b1;
@@ -240,6 +240,7 @@ html, body, #map {
 
   .byline {
     margin: 6px 0;
+    line-height: 20px;
   }
 }
 

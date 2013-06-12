@@ -153,18 +153,18 @@ html, body, #map {
         .search button.find img {
           height: 30px; } }
 
-#browser-description {
+#desktop-description {
   width: 250px;
   z-index: 99;
   position: absolute;
   left: 10px;
-  top: 48px;
+  top: 58px;
   opacity: 0.9;
   padding: 10px;
   border: solid 1px #b0b1b1;
   border-radius: 3px; }
   @media (max-width: 960px) {
-    #browser-description {
+    #desktop-description {
       display: none; } }
 
 
@@ -175,7 +175,8 @@ html, body, #map {
     font-size: 24px;
     margin: 2px 0; }
   .description .byline {
-    margin: 6px 0; }
+    margin: 6px 0;
+    line-height: 20px; }
 
 .leaflet-control-zoom {
   top: 50px; }
