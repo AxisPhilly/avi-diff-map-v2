@@ -280,12 +280,6 @@ html, body, #map {
   line-height: 40px;
 }
 
-.leaflet-control-zoom {
-  @media(max-width: 640px) {
-    display: none;
-  }
-}
-
 .button {
   border-style: none;
   background-color: #95A5A6;

@@ -196,10 +196,6 @@ html, body, #map {
   font-size: 32px;
   line-height: 40px; }
 
-@media (max-width: 640px) {
-  .leaflet-control-zoom {
-    display: none; } }
-
 .button {
   border-style: none;
   background-color: #95A5A6; }
