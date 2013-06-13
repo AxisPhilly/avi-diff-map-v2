@@ -40,13 +40,8 @@ app.initMap = function(callback) {
   app.map.addLayer(L.mapbox.tileLayer('axisphilly.avi-diff-v4'));
   app.map.addLayer(gridLayer);
   app.map.addControl(L.mapbox.gridControl(gridLayer, { template: app.opts.tooltipTemplate }));
-
-  // tooltip handling
-  // find a good way to get info on touch device
-  app.map.gridLayer
-    .on('mousemove',function(o) {
-
-    });
+  // add legend the hacky way
+  $('.map-legends').first().append($('.map-legend'));
 
   if(mapSettings.urlPosition === true) {
     app.setEvents();

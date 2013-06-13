@@ -289,9 +289,7 @@ html, body, #map {
     display: inline;
   }
 
-  font-size: 11px;
-
-  @media(max-width: 360px) {
+  @media(max-width: 640px) {
     font-size: 11px;
   }
 }
@@ -307,10 +305,114 @@ html, body, #map {
   @media(max-width: 960px) {
     margin-bottom: 55px;
   }
+
+  @media(max-width: 450px) {
+    .map-legend ul.legend-labels li span {
+      width: 23px;
+    }
+
+    .map-legend .legend-scale ul li {
+      width: 23px;
+      border: none;
+      margin: 0;
+      height: 5px;
+    }
+
+    em {
+      display: none;
+    }
+  }
 }
 
+// CSS from tilemill
 .map-legend ul.legend-labels li span { 
   margin-bottom: 12px !important;
+}
+
+.map-legend img {
+  margin-top: 10px;
+  float: right;
+  width: 35%;
+}
+.map-legend .groups {
+  color: #777;
+  margin-bottom: 4px;
+}
+.map-legend .groups .increase {
+  padding-left: 30px;
+}
+.map-legend .groups span {
+  display: inline-block;
+  width: 36%;
+  text-align: center;
+  font-style: italic;
+}
+.map-legend .groups .decrease {
+  padding-left: 30px;
+  text-align: left;
+}
+.map-legend .legend-title {
+  text-align: left;
+  margin-bottom: 4px;
+  font-weight: bold;
+  font-size: 90%;
+  }
+.map-legend .legend-scale ul {
+  margin: 0;
+  padding: 0;
+  float: left;
+  list-style: none;
+  margin-bottom: 10px;
+  }
+.map-legend .legend-scale ul li {
+  display: block;
+  float: left;
+  width: 33px;
+  margin-bottom: 6px;
+  text-align: left;
+  font-size: 80%;
+  list-style: none;
+  height: 18px;
+  border-left: solid 1px #333;
+  }
+ .map-legend .legend-scale ul li.middle {
+   width: 33px
+ }
+ .map-legend .legend-scale ul li.decrease {
+   text-align: right;
+ }
+.map-legend .legend-scale ul li.start {
+   border-left: none;
+ }
+.map-legend .start.decrease em {
+  margin-right: 3px;
+}  
+.map-legend ul.legend-labels li span {
+  display: block;
+  float: left;
+  height: 7px;
+  width: 33px;
+  padding-bottom: 4px;
+  margin-bottom: 5px;
+  }
+.map-legend .increase em { 
+  font-style: normal;
+  margin-left: -10px;
+}
+.map-legend .decrease em { 
+  font-style: normal;
+  margin-right: -17px;
+}
+.map-legend ul.legend-labels li span.middle {
+  width: 80px;
+}
+.map-legend .legend-source {
+  font-size: 70%;
+  color: #999;
+  clear: both;
+}
+.map-legend a {
+  color: #777;
 }
 
 // LEAFLET OVERRIDES
@@ -382,3 +484,5 @@ html, body, #map {
     top: 70px;
   }
 }
+
+// LEGEN
