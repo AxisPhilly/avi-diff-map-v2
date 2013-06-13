@@ -253,6 +253,44 @@ html, body, #map {
   }
 }
 
+// TOOLTIP 
+#tooltip {
+  width: 275px;
+
+  .address {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .change {
+    display: block;
+    font-size: 14px;
+  }
+
+  ul {
+    display: inline-block;
+    width: 25%;
+    list-style-type: none;
+    margin-bottom: 0;
+  }
+
+  .labels ul {
+    width: 45%;
+    display: inline-block;
+    list-style-type: none;
+    margin-bottom: 0;
+  }
+
+  .ul-container {
+    display: inline;
+  }
+
+  .labels {
+    display: inline;
+  }
+}
+
 // LEGEND
 .map-legends.leaflet-control {
   @media(max-width: 960px) {
@@ -270,6 +308,10 @@ html, body, #map {
 
   @media(max-width: 960px) {
     top: 70px;
+  }
+
+  @media(max-width: 360px) {
+    display: none;
   }
 }
 
@@ -314,9 +356,18 @@ html, body, #map {
   position: absolute;
   right: 50px;
   top: 50px;
+  max-width: 400px !important;
+
+  @media(max-width: 360px) {
+    right: 2px !important;
+  }
 
   @media(max-width: 640px) {
-    top: 80px;
-    right: 5px;
+    top: 70px;
+    right: 50px;
+  }
+
+  @media(max-width: 960px) {
+    top: 70px;
   }
 }

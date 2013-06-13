@@ -139,6 +139,7 @@ html, body, #map {
       outline: 0;
       outline-width: 0; }
   .search button.find {
+    width: 40px;
     float: right;
     font-size: 100%;
     padding: 0;
@@ -184,11 +185,45 @@ html, body, #map {
       color: #666;
       font-size: 16px; }
 
+#tooltip {
+  width: 275px; }
+  #tooltip .address {
+    display: block;
+    font-size: 16px;
+    font-weight: bold; }
+  #tooltip .change {
+    display: block;
+    font-size: 14px; }
+  #tooltip ul {
+    display: inline-block;
+    width: 25%;
+    list-style-type: none;
+    margin-bottom: 0; }
+  #tooltip .labels ul {
+    width: 45%;
+    display: inline-block;
+    list-style-type: none;
+    margin-bottom: 0; }
+  #tooltip .ul-container {
+    display: inline; }
+  #tooltip .labels {
+    display: inline; }
+
+@media (max-width: 960px) {
+  .map-legends.leaflet-control {
+    margin-bottom: 55px; } }
+
+.map-legend ul.legend-labels li span {
+  margin-bottom: 12px !important; }
+
 .leaflet-control-zoom {
   top: 50px; }
   @media (max-width: 960px) {
     .leaflet-control-zoom {
       top: 70px; } }
+  @media (max-width: 360px) {
+    .leaflet-control-zoom {
+      display: none; } }
 
 .leaflet-control-zoom a {
   height: 40px;
@@ -219,8 +254,15 @@ html, body, #map {
 .map-tooltip {
   position: absolute;
   right: 50px;
-  top: 50px; }
+  top: 50px;
+  max-width: 400px !important; }
+  @media (max-width: 360px) {
+    .map-tooltip {
+      right: 2px !important; } }
   @media (max-width: 640px) {
     .map-tooltip {
-      top: 80px;
-      right: 5px; } }
+      top: 70px;
+      right: 50px; } }
+  @media (max-width: 960px) {
+    .map-tooltip {
+      top: 70px; } }
