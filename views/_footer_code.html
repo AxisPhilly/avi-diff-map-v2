@@ -1,13 +1,13 @@
 <!-- Libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
 <% if(env === 'production') { %>
-  <script type="text/javascript" src="/js/app.libraries.min.<%= version %>.js"></script>
+  <script type="text/javascript" src="js/app.libraries.min.<%= version %>.js"></script>
 <% } else { %>
-  <script type="text/javascript" src="/js/lib/underscore.js"></script>
-  <script type="text/javascript" src="/js/lib/mapbox.js"></script>
-  <script type="text/javascript" src="/js/lib/foundation.js"></script>
-  <script type="text/javascript" src="/js/lib/foundation.reveal.js"></script>
-  <script type="text/javascript" src="/js/lib/fastclick.js"></script>
+  <script type="text/javascript" src="js/lib/underscore.js"></script>
+  <script type="text/javascript" src="js/lib/mapbox.js"></script>
+  <script type="text/javascript" src="js/lib/foundation.js"></script>
+  <script type="text/javascript" src="js/lib/foundation.reveal.js"></script>
+  <script type="text/javascript" src="js/lib/fastclick.js"></script>
 <% } %>
 
 <!-- Init Foundation and Fast Click-->
@@ -20,15 +20,18 @@
 
 <!-- App Code -->
 <% if(env === 'production') { %>
-  <script type="text/javascript" src="/js/app.min.<%= version %>.js"></script>
+  <script type="text/javascript" src="js/app.min.<%= version %>.js"></script>
 <% } else { %>
-  <script type="text/javascript" src="/js/app.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
 <% } %>
+
+<% include _tooltip_template.html %>
 <script type="text/javascript">
   // Default settings. Zoom and center overridden by URL params, if they exist
   app.opts = {
     mapContainer: 'map',
-    tileURL: 'http://api.tiles.mapbox.com/v3/axisphilly.map-g0m33qeq.jsonp',
+    tiles: 'axisphilly.map-fg6flibn',
+    tooltipTemplate: tooltipTemplate,
     mapOptions: {
       center: [39.99, -75.150],
       zoom: 12,
@@ -39,7 +42,9 @@
         [40.60, -74.14]
       ],
       zoomControl: false, // readded to the topright corner
-      urlPosition: true // updates url with center/x/y
+      urlPosition: true, // updates url with center/x/y,
+      legendControl: true,
+      tooltipControl: false
     }
   }
 
@@ -49,25 +54,25 @@
     $('.find-user').click(function(event){
       event.preventDefault();
 
-      $(this).find('img').attr('src', '/img/loading.gif');
+      $(this).find('img').attr('src', 'img/loading.gif');
 
       app.getLocation(function(position){
         app.addMarker(position.coords.latitude, position.coords.longitude);
 
-        $('.find-user').find('img').attr('src', '/img/marker.png');
+        $('.find-user').find('img').attr('src', 'img/marker.png');
       });
     });
 
     // Once a geocode request is back and processed,
     // this function is called for clean up
     app.geocodeDoneCallback = function() {
-      $('.search').find('img').attr('src', '/img/search.png');
+      $('.search').find('img').attr('src', 'img/search.png');
     }
 
     $('.search.top button').click(function(event){
       event.preventDefault();
 
-      $(this).find('img').attr('src', '/img/loading.gif');
+      $(this).find('img').attr('src', 'img/loading.gif');
       var address = $('.search').find('input').val();
 
       app.geocodeRequest(address);
@@ -76,7 +81,7 @@
     $('.search.bottom button').click(function(event){
       event.preventDefault();
 
-      $(this).find('img').attr('src', '/img/loading.gif');
+      $(this).find('img').attr('src', 'img/loading.gif');
       var address = $('.search.bottom').find('input').val();
 
       app.geocodeRequest(address);
@@ -91,7 +96,7 @@
     $('.embed').click(function(event){
         event.preventDefault();
         var urlParts = document.URL.split('#'),
-            embedUrl = 'http://apps.axisphilly.org/avi-map/embed/#' + urlParts[1];
+            embedUrl = 'http://apps.axisphilly.org/avi-map/embed.html#' + urlParts[1];
 
       $('#embedModal code').html('<code>&lt;iframe width="100%" height="600" src="' + embedUrl + '" frameborder="0"></iframe></code>');
       $('#embedModal').foundation('reveal', 'open');
@@ -105,13 +110,25 @@
   <a class="close-reveal-modal">&#215;</a>
 </div>
 <div class="description reveal-modal" id="infoModal">
-  <h2>Title of map</h2>
-  <div class="byline"><span class="byline-author">by <a href="http://axisphilly.org/author/casey/" title="Posts by Casey Thomas" rel="author">Casey Thomas</a>, </span><span class="byline-date">May 20, 2013</span></div>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  <h2>Property Tax Changes</h2>
+  <div class="byline"><span class="byline-author">by <a href="http://axisphilly.org/author/casey/" title="Posts by Casey Thomas" rel="author">Casey Thomas</a>, </span><span class="byline-date">Feb 15, 2013</span>, <a href="#" data-reveal-id="revision-history">Updated: Jun. 13, 2013</a></div>
+  <p>Read more on our <a href="http://axisphilly.org/project/taxes/">Taxes project</a> page.</p>
+  <p>Search for a specific address to zoom in on a neighborhood. Hover over a parcel to get more detailed information for that parcel.</p>
+  <p>Note: Parcels that could not be matched to a tax record are not shown.</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="revision-history" class="reveal-modal small">
+  <strong>Jun. 12th, 2013</strong>
+  <p>The tax rate and Homestead Exemption were set back to 1.34% and $30,000, respectively. The application was also redesigned to work better on mobile devices.</p>
+  <strong>Apr. 4th, 2013</strong>
+  <p>Additional information was added to the parcel roll-over.</p>
+  <strong>Apr. 1st, 2013</strong>
+  <p>OPA has assessed approximately 8,500 properties which were not previously assessed for AVI. Those newly assessed properties (mostly concentrated in the northwest) have been added to the map.</p>
+  <strong>Mar. 19th, 2013</strong>
+  <p>The map was updated to show how taxes would change with a tax rate of 1.32% and a $15,000 Homestead Exemption. New ranges were added to the map legend, as well as new colors, to better fit the new tax calculations. Style changes were also made to the map elements to better match the AxisPhilly website style.</p>
+  <strong>Feb. 17th, 2013</strong>
+  <p>Parcels that have not yet been reassessed under AVI--mostly concentrated in the northwest--were incorrectly added to this map. They have been removed. Parcels that were not originally shown--mostly parcels with abatements--have been added. Parcels that could not be matched to a tax record are not shown. The legend has also been adjusted to better fit the data.</p>
+  <strong>Feb. 15th, 2013</strong>
+  <p>This map shows how property taxes would change for most properties if City Council passes a tax rate of 1.34% and a $30,000 Homestead Exemption</p>
   <a class="close-reveal-modal">&#215;</a>
 </div>

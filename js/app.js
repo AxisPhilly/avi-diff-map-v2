@@ -24,9 +24,9 @@ app.mergeMapSettings = function() {
 app.initMap = function(callback) {
   var mapSettings = app.mergeMapSettings();
 
-  L.Icon.Default.imagePath = '/img/leaflet';
+  L.Icon.Default.imagePath = 'img/leaflet';
 
-  app.map = L.mapbox.map('map', 'axisphilly.map-g0m33qeq', mapSettings)
+  app.map = L.mapbox.map(app.opts.mapContainer, app.opts.tiles, mapSettings)
     .setView(mapSettings.center, mapSettings.zoom);
 
   L.control.zoom({position: 'topright'}).addTo(app.map);
@@ -34,6 +34,19 @@ app.initMap = function(callback) {
   app.map.attributionControl.addAttribution(
      'Source: City of Philadelphia <a href="http://www.opendataphilly.org/opendata/resource/225/opa-property-assessments/">Office of Property Assessment</a> &amp; <a href="http://www.opendataphilly.org/opendata/resource/248/philadelphia-water-department-stormwater-billing-parcels/">Philadelphia Water Department</a>. Basemap: (c) <a href="http://www.openstreetmap.org">OpenStreetMap</a>'
   );
+
+  // add parcels
+  var gridLayer = L.mapbox.gridLayer('axisphilly.avi-diff-v4');
+  app.map.addLayer(L.mapbox.tileLayer('axisphilly.avi-diff-v4'));
+  app.map.addLayer(gridLayer);
+  app.map.addControl(L.mapbox.gridControl(gridLayer, { template: app.opts.tooltipTemplate }));
+
+  // tooltip handling
+  // find a good way to get info on touch device
+  app.map.gridLayer
+    .on('mousemove',function(o) {
+
+    });
 
   if(mapSettings.urlPosition === true) {
     app.setEvents();
@@ -82,6 +95,10 @@ app.addMarker = function(lat, lng) {
 
 // Send @address to the Nomatim geocoding service
 app.geocodeRequest = function(address) {
+  if(address.search(/Phila/i) == -1) {
+    address = address + ' Philadelphia, PA, USA';
+  }
+
   var url = 'http://open.mapquestapi.com/nominatim/v1/search.php?' +
             'format=json&json_callback=app.processGeocodeResponse&q=' + encodeURIComponent(address) +
             '&viewbox=40.125%2C-75.407%2C39.834%2C-75.017' +

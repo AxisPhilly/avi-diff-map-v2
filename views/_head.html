@@ -28,25 +28,25 @@
 
 <% if(env === 'production') { %>
   <!-- Library stylesheets -->
-  <link type="text/css" rel="stylesheet" href="/css/app.libraries.<%= version %>.css">
+  <link type="text/css" rel="stylesheet" href="css/app.libraries.<%= version %>.css">
 <% } else { %>
   <!-- Foundation Stylesheets -->
-  <link type="text/css" rel="stylesheet" href="/css/lib/normalize.css">
-  <link type="text/css" rel="stylesheet" href="/css/lib/foundation.min.css">
+  <link type="text/css" rel="stylesheet" href="css/lib/normalize.css">
+  <link type="text/css" rel="stylesheet" href="css/lib/foundation.min.css">
 
   <!-- Leaflet Stylesheets -->
-  <link rel="stylesheet" href="/css/lib/mapbox.css" />
+  <link rel="stylesheet" href="css/lib/mapbox.css" />
 <% } %>
 
 <!-- App Stylesheet -->
 <% if(env === 'production') { %>
-  <link type="text/css" rel="stylesheet" href="/css/app.<%= version %>.css">
+  <link type="text/css" rel="stylesheet" href="css/app.<%= version %>.css">
 <% } else { %>
-  <link type="text/css" rel="stylesheet" href="/css/app.css">
+  <link type="text/css" rel="stylesheet" href="css/app.css">
 <% } %>
 
 <!-- Modernizr -->
-<script type="text/javascript" src="/js/lib/modernizr.custom.js"></script>
+<script type="text/javascript" src="js/lib/modernizr.custom.js"></script>
 
 <% if(env === 'production') { %>
   <!-- Google Analytics -->
