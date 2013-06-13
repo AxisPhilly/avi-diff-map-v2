@@ -254,7 +254,7 @@ html, body, #map {
 
 // TOOLTIP 
 #tooltip {
-  width: 275px;
+  width: 280px;
 
   .address {
     display: block;
@@ -269,7 +269,7 @@ html, body, #map {
 
   ul {
     display: inline-block;
-    width: 25%;
+    width: 27%;
     list-style-type: none;
     margin-bottom: 0;
   }
@@ -288,6 +288,8 @@ html, body, #map {
   .labels {
     display: inline;
   }
+
+  font-size: 11px;
 
   @media(max-width: 360px) {
     font-size: 11px;
