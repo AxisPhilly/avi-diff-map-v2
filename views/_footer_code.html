@@ -1,13 +1,13 @@
 <!-- Libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
 <% if(env === 'production') { %>
-  <script type="text/javascript" src="js/app.libraries.min.<%= version %>.js"></script>
+  <script type="text/javascript" src="/js/app.libraries.min.<%= version %>.js"></script>
 <% } else { %>
-  <script type="text/javascript" src="js/lib/underscore.js"></script>
-  <script type="text/javascript" src="js/lib/mapbox.js"></script>
-  <script type="text/javascript" src="js/lib/foundation.js"></script>
-  <script type="text/javascript" src="js/lib/foundation.reveal.js"></script>
-  <script type="text/javascript" src="js/lib/fastclick.js"></script>
+  <script type="text/javascript" src="/js/lib/underscore.js"></script>
+  <script type="text/javascript" src="/js/lib/mapbox.js"></script>
+  <script type="text/javascript" src="/js/lib/foundation.js"></script>
+  <script type="text/javascript" src="/js/lib/foundation.reveal.js"></script>
+  <script type="text/javascript" src="/js/lib/fastclick.js"></script>
 <% } %>
 
 <!-- Init Foundation and Fast Click-->
@@ -20,9 +20,9 @@
 
 <!-- App Code -->
 <% if(env === 'production') { %>
-  <script type="text/javascript" src="js/app.min.<%= version %>.js"></script>
+  <script type="text/javascript" src="/js/app.min.<%= version %>.js"></script>
 <% } else { %>
-  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="/js/app.js"></script>
 <% } %>
 <script type="text/javascript">
   // Default settings. Zoom and center overridden by URL params, if they exist
@@ -49,25 +49,25 @@
     $('.find-user').click(function(event){
       event.preventDefault();
 
-      $(this).find('img').attr('src', 'img/loading.gif');
+      $(this).find('img').attr('src', '/img/loading.gif');
 
       app.getLocation(function(position){
         app.addMarker(position.coords.latitude, position.coords.longitude);
 
-        $('.find-user').find('img').attr('src', 'img/marker.png');
+        $('.find-user').find('img').attr('src', '/img/marker.png');
       });
     });
 
     // Once a geocode request is back and processed,
     // this function is called for clean up
     app.geocodeDoneCallback = function() {
-      $('.search').find('img').attr('src', 'img/search.png');
+      $('.search').find('img').attr('src', '/img/search.png');
     }
 
     $('.search.top button').click(function(event){
       event.preventDefault();
 
-      $(this).find('img').attr('src', 'img/loading.gif');
+      $(this).find('img').attr('src', '/img/loading.gif');
       var address = $('.search').find('input').val();
 
       app.geocodeRequest(address);
@@ -76,7 +76,7 @@
     $('.search.bottom button').click(function(event){
       event.preventDefault();
 
-      $(this).find('img').attr('src', 'img/loading.gif');
+      $(this).find('img').attr('src', '/img/loading.gif');
       var address = $('.search.bottom').find('input').val();
 
       app.geocodeRequest(address);
@@ -89,9 +89,11 @@
     });
 
     $('.embed').click(function(event){
-      event.preventDefault();
+        event.preventDefault();
+        var urlParts = document.URL.split('#'),
+            embedUrl = 'http://apps.axisphilly.org/avi-map/embed/#' + urlParts[1];
 
-      $('#embedModal code').html('<code>&lt;iframe width="100%" height="600" src="' + document.URL + '/embed.html" frameborder="0"></iframe></code>');
+      $('#embedModal code').html('<code>&lt;iframe width="100%" height="600" src="' + embedUrl + '" frameborder="0"></iframe></code>');
       $('#embedModal').foundation('reveal', 'open');
     });
   });
