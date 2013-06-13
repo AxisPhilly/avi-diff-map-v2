@@ -24,7 +24,7 @@ app.mergeMapSettings = function() {
 app.initMap = function(callback) {
   var mapSettings = app.mergeMapSettings();
 
-  L.Icon.Default.imagePath = '/img/leaflet';
+  L.Icon.Default.imagePath = 'img/leaflet';
 
   app.map = L.mapbox.map(app.opts.mapContainer, app.opts.tiles, mapSettings)
     .setView(mapSettings.center, mapSettings.zoom);
