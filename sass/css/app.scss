@@ -227,7 +227,6 @@ html, body, #map {
 }
 
 #mobile-description {
-
 }
 
 .description {
@@ -242,6 +241,12 @@ html, body, #map {
   .byline {
     margin: 6px 0;
     line-height: 20px;
+  }
+}
+
+#infoModal {
+  p {
+    font-size: 12px; 
   }
 }
 
