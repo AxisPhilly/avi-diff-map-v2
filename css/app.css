@@ -208,6 +208,9 @@ html, body, #map {
     display: inline; }
   #tooltip .labels {
     display: inline; }
+  @media (max-width: 360px) {
+    #tooltip {
+      font-size: 11px; } }
 
 @media (max-width: 960px) {
   .map-legends.leaflet-control {
