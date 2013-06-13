@@ -188,6 +188,7 @@ html, body, #map {
   }
 
   button.find {
+    width: 40px;
     float: right;
     font-size: 100%;
     padding: 0;
@@ -250,6 +251,17 @@ html, body, #map {
       font-size: 16px;
     }
   }
+}
+
+// LEGEND
+.map-legends.leaflet-control {
+  @media(max-width: 960px) {
+    margin-bottom: 55px;
+  }
+}
+
+.map-legend ul.legend-labels li span { 
+  margin-bottom: 12px !important;
 }
 
 // LEAFLET OVERRIDES
