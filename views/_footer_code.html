@@ -24,11 +24,14 @@
 <% } else { %>
   <script type="text/javascript" src="/js/app.js"></script>
 <% } %>
+
+<% include _tooltip_template.html %>
 <script type="text/javascript">
   // Default settings. Zoom and center overridden by URL params, if they exist
   app.opts = {
     mapContainer: 'map',
-    tiles: 'axisphilly.map-3hr4rm2s',
+    tiles: 'axisphilly.map-fg6flibn',
+    tooltipTemplate: tooltipTemplate,
     mapOptions: {
       center: [39.99, -75.150],
       zoom: 12,
@@ -40,7 +43,8 @@
       ],
       zoomControl: false, // readded to the topright corner
       urlPosition: true, // updates url with center/x/y,
-      legendControl: true
+      legendControl: true,
+      tooltipControl: false
     }
   }
 
