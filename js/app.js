@@ -32,8 +32,8 @@ app.initMap = function(callback) {
   L.control.zoom({position: 'topright'}).addTo(app.map);
 
   app.map.attributionControl.addAttribution(
-      'Map Data: (c) <a href="http://www.openstreetmap.org">OpenStreetMap</a>'
-    );
+     'Source: City of Philadelphia <a href="http://www.opendataphilly.org/opendata/resource/225/opa-property-assessments/">Office of Property Assessment</a> &amp; <a href="http://www.opendataphilly.org/opendata/resource/248/philadelphia-water-department-stormwater-billing-parcels/">Philadelphia Water Department</a>. Basemap: (c) <a href="http://www.openstreetmap.org">OpenStreetMap</a>'
+  );
 
   if(mapSettings.urlPosition === true) {
     app.setEvents();
