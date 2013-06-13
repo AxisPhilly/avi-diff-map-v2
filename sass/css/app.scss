@@ -244,6 +244,17 @@ html, body, #map {
   }
 }
 
+// LEGEND
+.map-legends.leaflet-control {
+  @media(max-width: 960px) {
+    margin-bottom: 55px;
+  }
+}
+
+.map-legend ul.legend-labels li span { 
+  margin-bottom: 12px !important;
+}
+
 // LEAFLET OVERRIDES
 .leaflet-control-zoom {
   top: 50px;
