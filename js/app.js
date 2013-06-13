@@ -26,7 +26,7 @@ app.initMap = function(callback) {
 
   L.Icon.Default.imagePath = '/img/leaflet';
 
-  app.map = L.mapbox.map('map', 'axisphilly.map-g0m33qeq', mapSettings)
+  app.map = L.mapbox.map('map', mapSettings.tiles, mapSettings)
     .setView(mapSettings.center, mapSettings.zoom);
 
   L.control.zoom({position: 'topright'}).addTo(app.map);
@@ -34,6 +34,13 @@ app.initMap = function(callback) {
   app.map.attributionControl.addAttribution(
      'Source: City of Philadelphia <a href="http://www.opendataphilly.org/opendata/resource/225/opa-property-assessments/">Office of Property Assessment</a> &amp; <a href="http://www.opendataphilly.org/opendata/resource/248/philadelphia-water-department-stormwater-billing-parcels/">Philadelphia Water Department</a>. Basemap: (c) <a href="http://www.openstreetmap.org">OpenStreetMap</a>'
   );
+
+  // tooltip handling
+  // find a good way to get info on touch device
+  app.map.gridLayer
+    .on('click',function(o) {
+      console.log(o);
+    });
 
   if(mapSettings.urlPosition === true) {
     app.setEvents();

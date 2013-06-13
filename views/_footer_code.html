@@ -28,7 +28,7 @@
   // Default settings. Zoom and center overridden by URL params, if they exist
   app.opts = {
     mapContainer: 'map',
-    tileURL: 'http://api.tiles.mapbox.com/v3/axisphilly.map-g0m33qeq.jsonp',
+    tiles: 'axisphilly.map-3hr4rm2s',
     mapOptions: {
       center: [39.99, -75.150],
       zoom: 12,
@@ -40,7 +40,7 @@
       ],
       zoomControl: false, // readded to the topright corner
       urlPosition: true, // updates url with center/x/y,
-      legendControl: false // don't use mapbox legend
+      legendControl: true
     }
   }
 
