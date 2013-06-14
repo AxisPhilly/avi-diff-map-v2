@@ -307,6 +307,9 @@ html, body, #map {
   }
 
   @media(max-width: 450px) {
+    margin-bottom: 0;
+    bottom: 40px;
+
     .map-legend ul.legend-labels li span {
       width: 23px;
     }

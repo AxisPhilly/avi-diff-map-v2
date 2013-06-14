@@ -219,17 +219,20 @@ html, body, #map {
   .map-legends.leaflet-control {
     margin-bottom: 55px; } }
 @media (max-width: 450px) {
-  .map-legends.leaflet-control .map-legend ul.legend-labels li span {
-    width: 23px; }
+  .map-legends.leaflet-control {
+    margin-bottom: 0;
+    bottom: 40px; }
+    .map-legends.leaflet-control .map-legend ul.legend-labels li span {
+      width: 23px; }
 
-  .map-legends.leaflet-control .map-legend .legend-scale ul li {
-    width: 23px;
-    border: none;
-    margin: 0;
-    height: 5px; }
+    .map-legends.leaflet-control .map-legend .legend-scale ul li {
+      width: 23px;
+      border: none;
+      margin: 0;
+      height: 5px; }
 
-  .map-legends.leaflet-control em {
-    display: none; } }
+    .map-legends.leaflet-control em {
+      display: none; } }
 
 .map-legend ul.legend-labels li span {
   margin-bottom: 12px !important; }
