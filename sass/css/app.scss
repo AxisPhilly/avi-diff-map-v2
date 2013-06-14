@@ -307,8 +307,10 @@ html, body, #map {
   }
 
   @media(max-width: 450px) {
+    position: fixed;
     margin-bottom: 0;
-    bottom: 40px;
+    bottom: 55px;
+    right: 2px;
 
     .map-legend ul.legend-labels li span {
       width: 23px;
@@ -324,6 +326,26 @@ html, body, #map {
     em {
       display: none;
     }
+  }
+
+  @media(max-width: 360px) {
+    bottom: 40px;
+  }
+}
+
+.legend-close {
+  display: none;
+  color: #AAAAAA;
+  cursor: pointer;
+  font-size: 1.375em;
+  font-weight: bold;
+  line-height: 1;
+  position: absolute;
+  right: 0.6875em;
+  top: 0.5em;
+
+  @media(max-width: 360px) {
+    display: block;
   }
 }
 
@@ -474,18 +496,18 @@ html, body, #map {
   top: 50px;
   max-width: 400px !important;
 
-  @media(max-width: 360px) {
-    right: 2px !important;
-  }
-
-  @media(max-width: 640px) {
-    top: 70px;
-    right: 50px;
-  }
-
   @media(max-width: 960px) {
     top: 70px;
   }
+
+  @media(max-width: 640px) {
+    right: 50px;
+  }
+
+  @media(max-width: 360px) {
+    top: 55px !important;
+    right: 2px !important;
+  } 
 }
 
 // LEGEN
