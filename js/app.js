@@ -41,12 +41,10 @@ app.initMap = function(callback) {
   app.map.addLayer(gridLayer);
   app.interaction = false;
 
-  app.map.on('load', function(){
-    if (app.map.getZoom() >= 16) {
-      app.map.addControl(L.mapbox.gridControl(gridLayer, { template: app.opts.tooltipTemplate }));
-      app.interaction = true;
-    }
-  });
+  if (app.map.getZoom() >= 16) {
+    app.map.addControl(L.mapbox.gridControl(gridLayer, { template: app.opts.tooltipTemplate }));
+    app.interaction = true;
+  }
 
   app.map.on('zoomend', function(){
     if (app.map.getZoom() >= 16 && !app.interaction) {
