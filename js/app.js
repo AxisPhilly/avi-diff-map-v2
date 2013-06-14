@@ -39,7 +39,22 @@ app.initMap = function(callback) {
   var gridLayer = L.mapbox.gridLayer('axisphilly.avi-diff-v4');
   app.map.addLayer(L.mapbox.tileLayer('axisphilly.avi-diff-v4'));
   app.map.addLayer(gridLayer);
-  app.map.addControl(L.mapbox.gridControl(gridLayer, { template: app.opts.tooltipTemplate }));
+  app.interaction = false;
+
+  app.map.on('load', function(){
+    if (app.map.getZoom() >= 16) {
+      app.map.addControl(L.mapbox.gridControl(gridLayer, { template: app.opts.tooltipTemplate }));
+      app.interaction = true;
+    }
+  });
+
+  app.map.on('zoomend', function(){
+    if (app.map.getZoom() >= 16 && !app.interaction) {
+      app.map.addControl(L.mapbox.gridControl(gridLayer, { template: app.opts.tooltipTemplate }));
+      app.interaction = true;
+    }
+  });
+
   // add legend the hacky way
   $('.map-legends').first().append($('.map-legend'));
 
