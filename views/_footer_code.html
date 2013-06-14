@@ -102,7 +102,7 @@
         var urlParts = document.URL.split('#'),
             embedUrl = 'http://apps.axisphilly.org/avi-map/embed.html#' + urlParts[1];
 
-      $('#embedModal code').html('<code>&lt;iframe width="100%" height="600" src="' + embedUrl + '" frameborder="0"></iframe></code>');
+      $('#embedModal code').html('<code>&lt;iframe width="600" height="600" src="' + embedUrl + '" frameborder="0"></iframe></code>');
       $('#embedModal').foundation('reveal', 'open');
     });
   });
@@ -120,7 +120,6 @@
   <p>Read more on our <a href="http://axisphilly.org/project/taxes/">Taxes project</a> page.</p>
   <p>Search for a specific address to zoom in on a neighborhood. Hover over or click a parcel to get more detailed information for that parcel.</p>
   <p>Note: Parcels that could not be matched to a tax record are not shown.</p>
-  <% include _legend.html %>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 <div id="revision-history" class="reveal-modal small">
