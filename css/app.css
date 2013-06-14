@@ -196,11 +196,11 @@ html, body, #map {
     font-size: 14px; }
   #tooltip ul {
     display: inline-block;
-    width: 27%;
+    width: 30%;
     list-style-type: none;
     margin-bottom: 0; }
   #tooltip .labels ul {
-    width: 45%;
+    width: 40%;
     display: inline-block;
     list-style-type: none;
     margin-bottom: 0; }
