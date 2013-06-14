@@ -408,6 +408,9 @@ html, body, #map {
  }
 .map-legend .legend-scale ul li.start {
    border-left: none;
+   em {
+    font-size: .9em;
+   }
  }
 .map-legend .start.decrease em {
   margin-right: 3px;
